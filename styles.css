@@ -10,3 +10,18 @@
 .company-table dd{line-height:1.8}.company-table dd a{color:var(--emerald-dark);text-underline-offset:4px}
 .photo-visual{background:#ddd}.photo-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,18,17,.42));pointer-events:none}.photo-visual img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .8s cubic-bezier(.22,1,.36,1),filter .5s}.business-card:hover .photo-visual img{transform:scale(1.045);filter:saturate(1.04)}.photo-tag{position:absolute;left:20px;bottom:18px;z-index:1;color:#fff;font:700 10px/1 "DM Sans";letter-spacing:.16em;padding:10px 13px;border:1px solid rgba(255,255,255,.5);border-radius:99px;background:rgba(0,0,0,.14);backdrop-filter:blur(8px)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal,.reveal-card{opacity:1;transform:none}}
+
+/* HADAOJI PRINTへの導線 */
+.global-nav a:not(.nav-contact):not(.nav-print)::after{content:"";position:absolute;left:0;bottom:-7px;width:100%;height:2px;background:var(--emerald);transform:scaleX(0);transform-origin:right;transition:transform .3s}
+.global-nav a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-print{background:var(--emerald);color:#fff!important;padding:14px 20px;border-radius:99px;transition:.25s}
+.nav-print::after{display:none!important}.nav-print:hover{background:var(--emerald-dark);transform:translateY(-2px)}
+.hero-actions-corp{display:flex;flex-wrap:wrap;gap:12px}
+.hero-actions-corp.reveal.visible{transform:none}
+.print-button{display:inline-flex;align-items:center;justify-content:space-between;width:278px;padding:18px 22px;background:var(--emerald);color:#fff;border-radius:99px;font-size:14px;font-weight:800;text-decoration:none;box-shadow:0 12px 32px rgba(0,170,173,.24);transition:.25s}
+.print-button b{font-size:18px;transition:.25s}.print-button:hover{background:var(--emerald-dark);transform:translateY(-3px)}.print-button:hover b{transform:translate(4px,-4px)}
+.business-site-button{display:flex!important;align-items:center;justify-content:space-between;width:100%;padding:16px 20px!important;border-radius:99px;background:var(--emerald);color:#fff!important;font-size:14px!important;transition:.25s}
+.business-site-button span{color:#fff!important}.business-site-button:hover{background:var(--emerald-dark);transform:translateY(-2px)}
+.fixed-print-link{position:fixed;right:22px;bottom:22px;z-index:14;display:grid;grid-template-columns:1fr auto;column-gap:16px;align-items:center;min-width:255px;padding:15px 18px;border:2px solid #fff;border-radius:20px;background:var(--emerald);color:#fff;text-decoration:none;box-shadow:0 14px 38px rgba(0,75,78,.32);transition:.25s}
+.fixed-print-link span{grid-column:1;font-size:10px;font-weight:600;opacity:.85}.fixed-print-link strong{grid-column:1;font-size:15px}.fixed-print-link b{grid-column:2;grid-row:1/3;font-size:25px}.fixed-print-link:hover{background:var(--black);transform:translateY(-4px)}
+@media(max-width:900px){.nav-print{background:transparent;padding:0}.hero{min-height:1040px}.hero-actions-corp{display:grid}.hero-actions-corp .primary-button,.print-button{width:100%}.fixed-print-link{right:12px;bottom:12px;min-width:220px;padding:12px 15px}.fixed-print-link span{font-size:9px}.fixed-print-link strong{font-size:13px}footer{padding-bottom:105px}}
